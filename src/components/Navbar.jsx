@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { ThemeContext } from "./ThemeContext";
 
 const Navbar = () => {
+    const { theme, dispatch } = useContext(ThemeContext);
     return (
         <nav className="navbar">
             <h4 className="logo">Shop <span style={{ color: 'red' }}>Kart</span></h4>
@@ -10,6 +12,9 @@ const Navbar = () => {
                 <li><NavLink to='/products'>Products</NavLink></li>
                 <li><NavLink to='/cart'>Cart</NavLink></li>
                 <li><NavLink to='/login'>Login</NavLink></li>
+                <button onClick={() => dispatch({ type: 'THEME_TOGGLE'})}>
+                    {theme === 'dark' ? 'light' : 'dark'}
+                    </button>
                 {/* <li><NavLink to='/register'>Register</NavLink></li> */}
             </ul>
         </nav>
@@ -17,6 +22,35 @@ const Navbar = () => {
 }
 
 export default Navbar
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

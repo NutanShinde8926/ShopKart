@@ -6,10 +6,16 @@ import Products from './pages/Products'
 import Login from './pages/Login'
 import Register from './pages/Register'
 import Cart from './pages/Cart'
+import { useContext } from 'react'
+import { ThemeContext, ThemeProvider } from './components/ThemeContext'
 
-function App() {
+
+
+function AppContent() {
+  const { theme } = useContext(ThemeContext)
   return (
-    <BrowserRouter>
+    <div className={theme}>
+        <BrowserRouter>
       <Routes>
         <Route path='/' element={<Layout />}>
           <Route index element={<Home />} />
@@ -20,6 +26,17 @@ function App() {
         </Route>
       </Routes>
     </BrowserRouter>
+    </div>
+  )
+}
+
+
+
+function App() {
+  return (
+   <ThemeProvider>
+    <AppContent />
+   </ThemeProvider>
   )
 }
 
