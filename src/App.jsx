@@ -8,6 +8,7 @@ import Register from './pages/Register'
 import Cart from './pages/Cart'
 import { useContext } from 'react'
 import { ThemeContext, ThemeProvider } from './components/ThemeContext'
+import { CartProvider } from './components/CartContext'
 
 
 
@@ -15,6 +16,7 @@ function AppContent() {
   const { theme } = useContext(ThemeContext)
   return (
     <div className={theme}>
+      <CartProvider>
         <BrowserRouter>
       <Routes>
         <Route path='/' element={<Layout />}>
@@ -26,6 +28,7 @@ function AppContent() {
         </Route>
       </Routes>
     </BrowserRouter>
+    </CartProvider>
     </div>
   )
 }
@@ -36,6 +39,7 @@ function App() {
   return (
    <ThemeProvider>
     <AppContent />
+    <CartProvider />
    </ThemeProvider>
   )
 }
