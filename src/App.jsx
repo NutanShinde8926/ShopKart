@@ -24,9 +24,9 @@ function AppContent() {
           <Route index element={<Home />} />
           <Route path='products' element={<Products />} />
           <Route path='login' element={<Login />} />
-          {/* <Route path='register' element={<Register />} />
+           <Route path='register' element={<Register />} />
           <Route path='cart' element={<Cart />} />
-          <Route path='about' element={<About />} /> */}
+          <Route path='about' element={<About />} /> 
         </Route>
       </Routes>
     </BrowserRouter>
