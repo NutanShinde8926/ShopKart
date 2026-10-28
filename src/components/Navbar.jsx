@@ -12,6 +12,7 @@ const Navbar = () => {
                 <li><NavLink to='/products'>Products</NavLink></li>
                 <li><NavLink to='/cart'>Cart</NavLink></li>
                 <li><NavLink to='/login'>Login</NavLink></li>
+                <li><NavLink to='/about'>About</NavLink></li>
                 <button onClick={() => dispatch({ type: 'THEME_TOGGLE'})}>
                     {theme === 'dark' ? 'light' : 'dark'}
                     </button>

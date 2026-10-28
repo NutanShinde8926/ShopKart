@@ -9,6 +9,7 @@ import Cart from './pages/Cart'
 import { useContext } from 'react'
 import { ThemeContext, ThemeProvider } from './components/ThemeContext'
 import { CartProvider } from './components/CartContext'
+import About from './pages/About'
 
 
 
@@ -23,8 +24,9 @@ function AppContent() {
           <Route index element={<Home />} />
           <Route path='products' element={<Products />} />
           <Route path='login' element={<Login />} />
-          <Route path='register' element={<Register />} />
+          {/* <Route path='register' element={<Register />} />
           <Route path='cart' element={<Cart />} />
+          <Route path='about' element={<About />} /> */}
         </Route>
       </Routes>
     </BrowserRouter>
