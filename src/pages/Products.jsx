@@ -4,7 +4,8 @@ import Product from '../components/Product'
 const Products = () => {
   const [products, setProducts] = useState([])
   const [sortOrder, setSortOrder] = useState("")
-  const [sortPrice, setSortPrice] = useState("")
+  const [sortRating, setSortRating] = useState("")
+  
   useEffect(() => {
     fetch('https://fakestoreapi.com/products')
       .then(response => response.json())
