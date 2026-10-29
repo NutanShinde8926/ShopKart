@@ -2,14 +2,15 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { useCart } from './CartContext'
 
-const Product = ({id, title, image, price, category }) => {
+const Product = ({id, title, image, price, category, rating }) => {
 
   const { addToCart } = useCart();
   const product = {
     id,
     title,
     price,
-    category
+    category,
+    rating
   }
   
   return (
@@ -26,6 +27,7 @@ const Product = ({id, title, image, price, category }) => {
         <h2 className='card-title'>{title}</h2>
         <p className='card-text'>$ {price}</p>
         <p className='card-text'>{category}</p>
+        <p className='card-text'>Rating:{rating}</p>
         {/* <button onClick={() => addToCart(product)}>Add to Cart</button> */}
         <Link to='/cart' className='btn btn-primary'><button onClick={() => addToCart(product)}>Add to Cart</button>
 </Link>
@@ -34,4 +36,4 @@ const Product = ({id, title, image, price, category }) => {
   )
 }
 
-export default Product 
+export default Product;
